@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import {stdSlugValidationRegex, stdSlugValidationErrorMsg} from '.'
 
 export default defineType({
   name: 'theme',
@@ -24,8 +25,9 @@ export default defineType({
         'The unique URL suffix for this page. Only latin characters (a-z), numbers (0-9), and hyphens (-) are valid.',
       validation: (rule) =>
         rule.required().custom((currentValue) => {
-          if (currentValue?.current?.match(/[^\d\-a-zA-Z]+/gm))
-            return 'Only latin characters (a-z), numbers (0-9), and hyphens (-) are valid.'
+          if (currentValue?.current?.match(stdSlugValidationRegex)) {
+            return stdSlugValidationErrorMsg
+          }
           return true
         }),
     }),
