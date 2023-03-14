@@ -1,11 +1,11 @@
 import blockContent from './blockContent'
 import post from './post'
 
+import mediaItem from './mediaItem'
 import aboutPage from './aboutPage'
 import theme from './theme'
 import awardPastNews from './awardPastNews'
 import projectCategory from './projectCategory'
-import mediaCategory from './mediaCategory'
 
 export const stdSlugValidationRegex = /[^\d\-a-zA-Z]+/gm
 
@@ -15,9 +15,9 @@ export const stdSlugValidationErrorMsg =
 export const schemaTypes = [
   blockContent,
   post,
+  mediaItem,
   aboutPage,
   theme,
   awardPastNews,
   projectCategory,
-  mediaCategory,
 ]
