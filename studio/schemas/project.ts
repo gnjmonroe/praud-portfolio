@@ -46,6 +46,12 @@ export default defineType({
         }),
     }),
     defineField({
+      name: 'selectedWork',
+      title: 'Selected Work',
+      type: 'boolean',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'themes',
       title: 'Research Themes',
       type: 'array',
