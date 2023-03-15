@@ -17,6 +17,10 @@ export default defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
       validation: (rule) =>
         rule.required().custom((currentValue) => {
           if (currentValue?.current?.match(stdSlugValidationRegex)) {
